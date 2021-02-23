@@ -9,15 +9,17 @@
 .login__logo {
   margin-top: 20px;
   margin-bottom: 20px;
-  object-fit: contain;
-  width: 100px;
+  object-fit: fill;
+  width: 161px;
   margin-right: auto;
   margin-left: auto;
 }
 .login__container {
-  width: 300px;
+  width: 328px;
+  height: -moz-fit-content;
   height: fit-content;
   display: flex;
+  background-color: #8778d852;
   flex-direction: column;
   border-radius: 5px;
   border: 1px solid lightgray;

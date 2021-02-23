@@ -1,8 +1,9 @@
 import React from 'react';
 import './CheckoutProduct.css';
+import FlipMove from "react-flip-move";
 import { useStateValue } from "./StateProvider";
 
-function CheckoutProduct({id, title, image, price, rating}) {
+function CheckoutProduct({id, title, image, price, rating, hideButton}) {
     const [{ basket }, dispatch] = useStateValue();
     const Remove_from_basket = () => {
         // remove the item into the data layer
@@ -12,6 +13,7 @@ function CheckoutProduct({id, title, image, price, rating}) {
             id: id,
             })
       }
+      
  return ( 
         <div className = "checkoutProduct" >
             <img className = "checkoutProduct__image"
@@ -31,8 +33,9 @@ function CheckoutProduct({id, title, image, price, rating}) {
         } 
         </div>
 
-        
+        {!hideButton && (
         <button onClick={Remove_from_basket}> Remove from Basket </button>
+        )}
        </div> 
        </div>
     )          
